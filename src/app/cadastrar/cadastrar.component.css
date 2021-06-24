@@ -1,0 +1,9 @@
+#bg-img {
+    background-image: url(https://images.pexels.com/photos/92901/pexels-photo-92901.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+
+    min-height: 100vh;
+
+    background-position: -80px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
