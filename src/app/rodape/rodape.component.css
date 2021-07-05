@@ -1,3 +1,8 @@
+.sticky-footer {
+    position: sticky;
+    top: 100%;
+}
+
 ul.social-network {
     list-style: none;
     padding: 0;
