@@ -5,3 +5,40 @@
 .fs-18 {
     font-size: 18pt;
 }
+
+.main-color{
+    background-color: #37474F;
+}
+
+.text-color {
+    color: #92e3a9;
+}
+
+.button-green {
+    background-color: #92e3a9;
+}
+
+.button-red {
+    color: white;
+    background-color: #ed6b6c;
+}
+
+.color-nav-postagem {
+    background-color: #92e3a9;
+}
+
+a.nav-link.active {
+    background-color: #92e3a9;
+}
+
+.color-modal {
+    background-color: #57646e;
+}
+
+:placeholder-shown {
+    font-style: italic;
+}
+
+option.custom {
+    font-style: italic;
+}
