@@ -1,3 +1,11 @@
+.main-color {
+    background-color: #37474F;
+}
+
+.secondary-color {
+    background-color: #263238;
+}
+
 .sticky-footer {
     position: sticky;
     top: 100%;
