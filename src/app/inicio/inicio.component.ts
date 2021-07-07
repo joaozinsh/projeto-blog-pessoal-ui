@@ -4,7 +4,6 @@ import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { Usuario } from '../model/Usuario';
-import { AuthService } from '../service/auth.service';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
 import { UsuarioService } from '../service/usuario.service';
@@ -31,7 +30,6 @@ export class InicioComponent implements OnInit {
     private postagemService: PostagemService,
     private temaService: TemaService,
     private usuarioService: UsuarioService,
-    private authService: AuthService
   ) { }
 
   ngOnInit(): void {
@@ -48,6 +46,12 @@ export class InicioComponent implements OnInit {
   findAllTemas() {
     this.temaService.getAllTema().subscribe((resp: Tema[])=> {
       this.listaTemas = resp
+    })
+  }
+
+  findByIdTema() {
+    this.temaService.getByIdTema(this.idTema).subscribe((resp: Tema)=> {
+      this.tema = resp
     })
   }
 
