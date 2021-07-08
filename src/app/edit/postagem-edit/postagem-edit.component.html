@@ -23,8 +23,9 @@
               </div>
     
               <div class="form-group">
-                <label for="tema">Escolha um tema ou <a class="text-color" data-dismiss="modal" routerLink="/tema">cadastre
+                <label for="tema">Escolha um tema ou <a class="text-cadastrar-novo" data-dismiss="modal" routerLink="/tema">cadastre
                     um novo</a>: </label>
+                <p class="mb-0"><small>Tema Atual: {{postagem.tema.descricao}}</small></p>
                 <select [(ngModel)]='idTema' class="form-control" name="tema" id="tema">
                   <option *ngFor='let tema of listaTemas' class="custom" value="{{tema.id}}">
                     {{tema.descricao}}
