@@ -18,7 +18,6 @@ export class PostagemService {
   }
 
   getAllPostagem(): Observable<Postagem[]> {
-    console.log(this.token)
     return this.http.get<Postagem[]>("https://apiblogpessoaljg.herokuapp.com/postagens/buscar-todos", this.token)
   }
 

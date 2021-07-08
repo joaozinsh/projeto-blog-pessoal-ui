@@ -64,7 +64,6 @@ export class InicioComponent implements OnInit {
   findByIdUser(){
     this.usuarioService.getByIdUser(this.idUser).subscribe((resp: Usuario)=> {
       this.user = resp
-      console.log(this.user)
     })
   }
 

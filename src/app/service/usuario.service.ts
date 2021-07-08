@@ -21,8 +21,6 @@ export class UsuarioService {
     let params = new HttpParams()
       .set('id', id)
 
-      console.log(environment.token)
-      console.log(this.token)
     return this.http.get<Usuario>(`https://apiblogpessoaljg.herokuapp.com/usuarios/buscar-id?${params}`, this.token)
   }
 
