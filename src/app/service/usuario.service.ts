@@ -24,4 +24,8 @@ export class UsuarioService {
     return this.http.get<Usuario>(`https://apiblogpessoaljg.herokuapp.com/usuarios/buscar-id?${params}`, this.token)
   }
 
+  putUser(user: Usuario): Observable<Usuario> {
+    return this.http.put<Usuario>('https://apiblogpessoaljg.herokuapp.com/usuarios/alterar', user, this.token)
+  }
+
 }
