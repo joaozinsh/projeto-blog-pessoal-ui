@@ -47,7 +47,7 @@
     <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="nav-todasPostagens-tab">
 
       <div class="card-columns">
-        <div *ngFor='let postagem of listaPostagens' class="card text-center">
+        <div *ngFor='let postagem of listaPostagens | orderBy : key : reverse' class="card text-center">
           <div class="card-body">
             <h5 class="card-title m-0">{{postagem.titulo}}</h5>
             <p class="card-text">
@@ -75,7 +75,7 @@
     <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens-tab">
 
       <div class="card-columns">
-        <div *ngFor='let postagem of user.postagens' class="card text-center">
+        <div *ngFor='let postagem of user.postagens | orderBy : key : reverse' class="card text-center">
           <div class="card-body">
             <h5 class="card-title m-0">{{postagem.titulo}}</h5>
             <p class="card-text">
@@ -114,7 +114,7 @@
       </div>
 
       <div class="card-columns mt-4">
-        <div *ngFor='let postagem of tema.postagens' class="card text-center">
+        <div *ngFor='let postagem of tema.postagens | orderBy : key : reverse' class="card text-center">
           <div class="card-body">
             <h5 class="card-title m-0">{{postagem.titulo}}</h5>
             <p class="card-text mt-3">{{postagem.texto}}</p>

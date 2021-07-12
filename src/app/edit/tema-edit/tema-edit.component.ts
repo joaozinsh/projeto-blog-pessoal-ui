@@ -40,6 +40,8 @@ export class TemaEditComponent implements OnInit {
   }
 
   atualizar(){
+    this.tema.postagens = []
+    
     this.temaService.putTema(this.tema).subscribe((resp: Tema)=> {
       this.tema = resp
       this.alertas.showAlertSuccess("Tema atualizado com sucesso!")
