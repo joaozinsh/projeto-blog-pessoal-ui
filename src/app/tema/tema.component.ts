@@ -15,6 +15,8 @@ export class TemaComponent implements OnInit {
   tema: Tema = new Tema()
   listaTemas: Tema[]
 
+  key = 'id'
+
   constructor(
     private router: Router,
     private temaService: TemaService,

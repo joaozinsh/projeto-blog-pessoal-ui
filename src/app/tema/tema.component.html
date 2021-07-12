@@ -43,7 +43,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor='let tema of listaTemas'>
+                  <tr *ngFor='let tema of listaTemas | orderBy : key'>
                     <td>{{tema.id}}</td>
                     <td>{{tema.descricao}}</td>
                     <td class="d-flex justify-content-end">
