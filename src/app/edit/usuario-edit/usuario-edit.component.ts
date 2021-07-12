@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Usuario } from 'src/app/model/Usuario';
+import { AlertasService } from 'src/app/service/alertas.service';
 import { UsuarioService } from 'src/app/service/usuario.service';
 import { environment } from 'src/environments/environment.prod';
 
@@ -19,14 +20,15 @@ export class UsuarioEditComponent implements OnInit {
   constructor(
     private usuarioService: UsuarioService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private alertas: AlertasService
   ) { }
 
   ngOnInit(){
     window.scroll(0, 0)
 
     if(environment.token == "") {
-      //alert("Sua sessão expirou, faça login novamente")
+      this.alertas.showAlertInfo("Sua sessão expirou, faça login novamente.")
       this.router.navigate(["/entrar"])
     }
 
@@ -49,12 +51,12 @@ export class UsuarioEditComponent implements OnInit {
 
   atualizar(){
     if (this.user.senha != this.confirmarSenha) {
-      alert("A senhas estão incorretas!")
+      this.alertas.showAlertDanger("A senhas devem ser iguais!")
     } else {
       this.usuarioService.putUser(this.user).subscribe((resp: Usuario) => {
         this.user = resp
         this.router.navigate(["/entrar"])
-        alert("Usuário alterado com sucesso, faça login novamente!")
+        this.alertas.showAlertSuccess("Usuário alterado com sucesso, faça login novamente!")
 
         environment.foto = ""
         environment.id = 0
@@ -62,7 +64,7 @@ export class UsuarioEditComponent implements OnInit {
         environment.token = ""
       }, erro =>{
         if (erro.status == 400) {
-          alert("Esse usuario já existe! Tente outro ou permaneça com o seu")
+          this.alertas.showAlertDanger("Esse usuario já existe! Tente outro ou permaneça com o seu")
         }
       })
     }
