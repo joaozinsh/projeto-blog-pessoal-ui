@@ -24,7 +24,15 @@ export class PostagemService {
   getByIdPostagem(id: number): Observable<Postagem> {
     let params = new HttpParams()
       .set('id', id)
+
     return this.http.get<Postagem>(`https://apiblogpessoaljg.herokuapp.com/postagens/buscar-id?${params}`, this.token)
+  }
+
+  getByTituloPostagem(titulo: string): Observable<Postagem[]> {
+    let params = new HttpParams()
+      .set('titulo', titulo)
+
+    return this.http.get<Postagem[]>(`https://apiblogpessoaljg.herokuapp.com/postagens/buscar-titulo?${params}`, this.token)
   }
 
   postPostagem(postagem: Postagem): Observable<Postagem> {
@@ -38,6 +46,7 @@ export class PostagemService {
   deletePostagem(id: number) {
     let params = new HttpParams()
       .set('id', id)
+      
     return this.http.delete(`https://apiblogpessoaljg.herokuapp.com/postagens/deletar?${params}`, this.token)
   }
 }
