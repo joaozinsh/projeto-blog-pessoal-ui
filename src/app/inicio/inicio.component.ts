@@ -25,6 +25,7 @@ export class InicioComponent implements OnInit {
 
   postagem: Postagem = new Postagem()
   listaPostagens: Postagem[]
+  tituloPost: string
 
   key = 'data'
   reverse = true
@@ -65,6 +66,16 @@ export class InicioComponent implements OnInit {
     this.postagemService.getAllPostagem().subscribe((resp: Postagem[])=> {
       this.listaPostagens = resp
     })
+  }
+
+  findByTituloPostagem() {
+    if(this.tituloPost == '') {
+      this.findAllPostagens
+    } else {
+      this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[])=> {
+        this.listaPostagens = resp
+      })
+    }
   }
 
   findByIdUser(){
