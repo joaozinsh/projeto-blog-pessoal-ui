@@ -6,7 +6,7 @@ O blog pessoal é um projeto desenvolvido durante o bootcamp Desenvolvedor Java 
 
 A aplicação consiste em uma rede social tipo blog, em que se é possivel visualizar postagens de outros usuários, além de criar suas próprias.
 
-# Imagens
+## Imagens
 <table>
   <tr>
     <td>
