@@ -48,7 +48,7 @@ GitHub da [API](https://github.com/joaozinsh/projeto-blog-pessoal)
 ## Back-End
 Pré-requisitos: Java 11
 
-```
+```bash
 # Clonar repositório da API
 git clone https://github.com/joaozinsh/projeto-blog-pessoal
 
@@ -57,14 +57,14 @@ git clone https://github.com/joaozinsh/projeto-blog-pessoal
 
 # O servidor inciará na porta:8080 - acesse http://localhost:8080
 # Senha da documentação Swagger
-  Usuario: admin
-  Senha: admin
+  # Usuario: admin
+  # Senha: admin
 ```
 
 ## Front-End
 Pré-requisitos: npm / yarn
 
-```
+```bash
 # Clonar repositório
 git clone https://github.com/joaozinsh/projeto-blog-pessoal-ui.git
 
@@ -74,5 +74,5 @@ npm install
 # Executar o projeto
 ng serve
 
-A aplicação será aberta na porta:4200 - acesse http://localhost:4200
+# A aplicação será aberta na porta:4200 - acesse http://localhost:4200
 ```
